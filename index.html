@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Suunandana R — Senior Customer Success Manager with 12+ years of experience across enterprise customer success, cloud and SaaS operations, technical support, and stakeholder management." />
+  <meta name="theme-color" content="#1E293B" />
+  <title>Suunandana R | Customer Success & Cloud</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+    :root{
+      --bg:#f6f7f9;
+      --bg-2:#eef1f5;
+      --surface:rgba(255,255,255,.72);
+      --surface-solid:#ffffff;
+      --surface-dark:#101827;
+      --ink:#101827;
+      --muted:#667085;
+      --muted-2:#8a94a6;
+      --gold:#b68a3a;
+      --gold-2:#d2ad68;
+      --gold-pale:#f5ead3;
+      --navy:#142033;
+      --line:rgba(16,24,39,.09);
+      --line-dark:rgba(255,255,255,.12);
+      --shadow:0 24px 70px rgba(16,24,39,.10);
+      --shadow-sm:0 10px 30px rgba(16,24,39,.07);
+      --radius:24px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"DM Sans",ui-sans-serif,system-ui,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 12% 5%,rgba(210,173,104,.18),transparent 23rem),
+        radial-gradient(circle at 92% 18%,rgba(116,145,185,.15),transparent 27rem),
+        linear-gradient(180deg,#fbfcfd 0%,var(--bg) 48%,#f9fafb 100%);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+      background-image:linear-gradient(rgba(20,32,51,.025) 1px,transparent 1px),
+                       linear-gradient(90deg,rgba(20,32,51,.025) 1px,transparent 1px);
+      background-size:56px 56px;
+      mask-image:linear-gradient(to bottom,black,transparent 80%);
+    }
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    ::selection{background:var(--gold);color:white}
+
+    .progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),#e1c27e);z-index:9999}
+    .cursor-glow{
+      position:fixed;width:260px;height:260px;border-radius:50%;pointer-events:none;z-index:0;
+      background:radial-gradient(circle,rgba(197,160,89,.11),transparent 68%);
+      transform:translate(-50%,-50%);transition:opacity .25s;opacity:0;
+    }
+    .container{width:min(calc(100% - 40px),var(--max));margin:auto}
+
+    .nav{
+      position:fixed;top:14px;left:0;right:0;z-index:1000;
+      transition:.35s ease;
+    }
+    .nav-inner{
+      height:64px;padding:0 10px 0 20px;display:flex;align-items:center;justify-content:space-between;
+      background:rgba(255,255,255,.62);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+      border:1px solid rgba(255,255,255,.8);box-shadow:var(--shadow-sm);border-radius:18px;
+    }
+    .brand{font-family:Manrope;font-weight:800;letter-spacing:.08em;font-size:.82rem}
+    .brand span{color:var(--gold)}
+    .nav-links{display:flex;gap:4px;align-items:center}
+    .nav-links a{font-size:.82rem;color:var(--muted);padding:9px 13px;border-radius:10px;transition:.25s}
+    .nav-links a:hover{color:var(--ink);background:rgba(20,32,51,.05)}
+    .menu{display:none;background:transparent;border:1px solid var(--line);color:var(--ink);padding:8px 11px;border-radius:10px;cursor:pointer}
+
+    .hero{min-height:100vh;display:grid;place-items:center;position:relative;padding:135px 0 90px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:80px;align-items:center}
+    .eyebrow{
+      display:inline-flex;gap:9px;align-items:center;color:var(--gold);
+      text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;font-weight:800;margin-bottom:20px
+    }
+    .eyebrow:before{content:"";width:32px;height:1px;background:var(--gold)}
+    h1{
+      font-family:Manrope,sans-serif;font-size:clamp(3.4rem,7vw,6.8rem);
+      line-height:.92;letter-spacing:-.07em;max-width:850px
+    }
+    h1 span{
+      color:transparent;
+      background:linear-gradient(105deg,var(--gold),#e0bd78 50%,#9a702c);
+      -webkit-background-clip:text;background-clip:text
+    }
+    .hero-copy{max-width:680px;color:var(--muted);font-size:1.05rem;margin:27px 0 30px}
+    .hero-actions{display:flex;gap:11px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:9px;padding:12px 17px;border-radius:12px;
+      border:1px solid var(--line);transition:transform .25s,box-shadow .25s,background .25s;
+      font-weight:700;font-size:.84rem;background:rgba(255,255,255,.55)
+    }
+    .btn.primary{background:var(--navy);color:white;border-color:var(--navy);box-shadow:0 12px 25px rgba(20,32,51,.14)}
+    .btn.primary:hover{background:#1d2c43}
+    .btn.secondary:hover{border-color:rgba(182,138,58,.5);color:var(--gold);background:white}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(16,24,39,.11)}
+
+    .portrait-wrap{position:relative;display:grid;place-items:center}
+    .portrait-wrap:before{
+      content:"";position:absolute;width:350px;height:350px;border-radius:50%;
+      background:conic-gradient(from 30deg,transparent 0 58%,rgba(197,160,89,.48) 70%,transparent 82%);
+      animation:spin 14s linear infinite;filter:blur(.2px)
+    }
+    .portrait-wrap:after{
+      content:"";position:absolute;width:315px;height:315px;border-radius:50%;
+      border:1px solid rgba(182,138,58,.18)
+    }
+    .portrait{
+      width:250px;height:305px;object-fit:cover;border-radius:30px;position:relative;z-index:2;
+      border:7px solid rgba(255,255,255,.82);box-shadow:0 30px 70px rgba(16,24,39,.18);
+      background:#dce2ea;animation:float 5s ease-in-out infinite
+    }
+    .photo-note{
+      position:absolute;bottom:-20px;z-index:3;background:rgba(255,255,255,.82);
+      backdrop-filter:blur(14px);border:1px solid rgba(16,24,39,.08);
+      padding:8px 12px;border-radius:10px;font-size:.68rem;color:var(--muted);box-shadow:var(--shadow-sm)
+    }
+
+    section{padding:110px 0;position:relative}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:38px}
+    .kicker{color:var(--gold);text-transform:uppercase;letter-spacing:.17em;font-weight:800;font-size:.68rem;margin-bottom:9px}
+    h2{font-family:Manrope;font-size:clamp(2rem,4vw,3.35rem);line-height:1;letter-spacing:-.055em}
+    .section-intro{color:var(--muted);max-width:520px}
+
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:65px}
+    .stat{
+      padding:22px;border:1px solid rgba(16,24,39,.07);border-radius:18px;
+      background:rgba(255,255,255,.62);backdrop-filter:blur(14px);box-shadow:var(--shadow-sm);
+      transition:.3s
+    }
+    .stat:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .stat strong{display:block;font-family:Manrope;font-size:1.9rem;color:var(--navy);line-height:1}
+    .stat span{display:block;color:var(--muted);font-size:.78rem;margin-top:9px}
+
+    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+    .about-text{font-size:1.05rem;color:#445066}
+    .about-text p+p{margin-top:18px}
+    .quote{
+      margin-top:25px;padding:20px 22px;border-left:2px solid var(--gold);
+      color:#795d2b;font-size:1rem;background:linear-gradient(90deg,var(--gold-pale),rgba(245,234,211,.3));
+      border-radius:0 14px 14px 0
+    }
+
+    .filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:23px}
+    .filter{
+      cursor:pointer;padding:8px 13px;border-radius:999px;border:1px solid var(--line);
+      color:var(--muted);background:rgba(255,255,255,.5);transition:.25s;font-size:.78rem
+    }
+    .filter.active,.filter:hover{background:var(--navy);color:white;border-color:var(--navy)}
+    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+    .skill-card{
+      padding:21px;border:1px solid rgba(16,24,39,.07);border-radius:19px;
+      background:rgba(255,255,255,.68);backdrop-filter:blur(14px);box-shadow:0 8px 25px rgba(16,24,39,.045);
+      transition:transform .3s,box-shadow .3s,border .3s;min-height:165px
+    }
+    .skill-card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:rgba(182,138,58,.28)}
+    .skill-icon{
+      width:39px;height:39px;border-radius:11px;display:grid;place-items:center;
+      background:var(--gold-pale);color:var(--gold);margin-bottom:14px;font-weight:800
+    }
+    .skill-card h3{font-family:Manrope;font-size:.94rem;margin-bottom:7px}
+    .skill-card p{color:var(--muted);font-size:.79rem;line-height:1.55}
+
+    .timeline{position:relative;margin-top:15px}
+    .timeline:before{content:"";position:absolute;left:17px;top:0;bottom:0;width:1px;background:linear-gradient(var(--gold),var(--line),transparent)}
+    .job{position:relative;padding-left:55px;margin-bottom:43px}
+    .dot{
+      position:absolute;left:9px;top:5px;width:17px;height:17px;border-radius:50%;
+      border:4px solid var(--bg);background:var(--gold);box-shadow:0 0 0 1px rgba(182,138,58,.45)
+    }
+    .job-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+    .job h3{font-family:Manrope;font-size:1.18rem}
+    .role{color:var(--gold);font-weight:700;font-size:.83rem}
+    .date{color:var(--muted-2);font-size:.76rem;white-space:nowrap}
+    .job ul{margin-top:12px;padding-left:18px;color:var(--muted)}
+    .job li{margin:6px 0;padding-left:4px;font-size:.88rem}
+
+    .pill-grid{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+    .pill{
+      border:1px solid rgba(16,24,39,.08);padding:9px 13px;border-radius:999px;
+      color:#4d586a;background:rgba(255,255,255,.68);font-size:.78rem;box-shadow:0 5px 16px rgba(16,24,39,.04)
+    }
+
+    .contact-card{
+      border:1px solid rgba(182,138,58,.25);
+      background:linear-gradient(135deg,#152237 0%,#1d2b42 55%,#24344e 100%);
+      color:white;border-radius:28px;padding:43px;display:grid;grid-template-columns:1fr auto;
+      gap:30px;align-items:center;box-shadow:0 30px 80px rgba(20,32,51,.18);overflow:hidden;position:relative
+    }
+    .contact-card:after{
+      content:"";position:absolute;width:380px;height:380px;border-radius:50%;
+      right:-160px;top:-190px;border:1px solid rgba(210,173,104,.25);box-shadow:0 0 0 35px rgba(210,173,104,.025),0 0 0 70px rgba(210,173,104,.018)
+    }
+    .contact-card .kicker{color:#d9b66f}
+    .contact-card p{color:#b9c4d3;max-width:680px;margin-top:12px}
+    .contact-links{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end;position:relative;z-index:2}
+    .contact-card .btn.primary{background:var(--gold);border-color:var(--gold);color:#172033}
+    .contact-card .btn.secondary{background:transparent;color:white;border-color:rgba(255,255,255,.16)}
+
+    footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.76rem}
+    footer .container{display:flex;justify-content:space-between;gap:20px}
+
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+    .reveal.visible{opacity:1;transform:none}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes float{50%{transform:translateY(-8px)}}
+
+    @media(max-width:900px){
+      .hero-grid,.about-grid{grid-template-columns:1fr}
+      .portrait-wrap{order:-1;margin-bottom:45px}
+      .hero{padding-top:130px}
+      .skills{grid-template-columns:repeat(2,1fr)}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .contact-card{grid-template-columns:1fr}
+      .contact-links{justify-content:flex-start}
+    }
+    @media(max-width:650px){
+      .container{width:min(calc(100% - 28px),var(--max))}
+      .nav{top:8px}
+      .nav-inner{height:60px}
+      .nav-links{
+        display:none;position:absolute;top:68px;left:0;right:0;padding:12px;
+        background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border:1px solid var(--line);
+        border-radius:16px;flex-direction:column;align-items:stretch;box-shadow:var(--shadow)
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{padding:9px 10px}
+      .menu{display:block}
+      .hero-grid{gap:20px}
+      h1{font-size:clamp(3rem,16vw,5rem)}
+      .portrait{width:205px;height:255px}
+      .portrait-wrap:before{width:285px;height:285px}
+      .portrait-wrap:after{width:255px;height:255px}
+      .skills{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .section-head{display:block}
+      .section-intro{margin-top:14px}
+      .job-top{display:block}
+      .date{display:block;margin-top:4px}
+      .contact-card{padding:28px}
+      footer .container{display:block}
+      footer span{display:block;margin-top:8px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+      .reveal{opacity:1;transform:none}
+      .cursor-glow{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="progress" id="progress"></div>
+
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">SUUNANDANA<span>.</span></a>
+      <button class="menu" id="menu" aria-label="Open navigation">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Customer Success • Cloud • SaaS</div>
+          <h1>Turning customer relationships into <span>lasting value.</span></h1>
+          <p class="hero-copy">
+            Results-driven Senior Customer Success Manager with 12+ years of experience across
+            enterprise customer lifecycles, cloud and SaaS environments, technical operations,
+            and stakeholder management.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#experience">Explore Experience ↗</a>
+            <a class="btn secondary" href="#contact">Let's Connect</a>
+          </div>
+        </div>
+
+        <div class="portrait-wrap reveal">
+          <!-- Replace profile-photo.jpg with your actual photo file. -->
+          <img class="portrait" src="profile-photo.jpg" alt="Suunandana R" />
+          <div class="photo-note">Replace <strong>profile-photo.jpg</strong> with your photo</div>
+        </div>
+      </div>
+
+      <div class="container stats reveal">
+        <div class="stat"><strong>12+</strong><span>Years of experience</span></div>
+        <div class="stat"><strong>100%</strong><span>Contract renewals at CSRL</span></div>
+        <div class="stat"><strong>50%</strong><span>Order-cycle turnaround improvement</span></div>
+        <div class="stat"><strong>Top 3</strong><span>National ranking across 29 centers</span></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <div class="kicker">01 / About</div>
+          <h2>Customer-first.<br><span style="color:var(--gold)">Outcome-driven.</span></h2>
+        </div>
+        <div class="about-text reveal">
+          <p>
+            I bring 12+ years of experience across customer success, enterprise stakeholder
+            management, SaaS/PaaS/IaaS operations, technical support, and business operations.
+          </p>
+          <p>
+            My work centers on understanding customer goals, driving adoption and value
+            realization, managing risk and escalations, and building relationships that support
+            long-term customer outcomes.
+          </p>
+          <div class="quote">
+            “Strong customer relationships are built when technology, communication, and business
+            outcomes move in the same direction.”
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">02 / Expertise</div>
+            <h2>What I work with</h2>
+          </div>
+          <p class="section-intro">
+            Explore the capabilities behind my customer success, cloud operations, enterprise
+            engagement, and governance experience.
+          </p>
+        </div>
+
+        <div class="filter-bar reveal" role="tablist" aria-label="Skill filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="customer">Customer Success</button>
+          <button class="filter" data-filter="cloud">Cloud & Technical</button>
+          <button class="filter" data-filter="systems">Systems & Governance</button>
+        </div>
+
+        <div class="skills" id="skills">
+          <article class="skill-card reveal" data-category="customer">
+            <div class="skill-icon">↗</div><h3>Customer Journey Mapping</h3>
+            <p>End-to-end enterprise customer lifecycle management and journey ownership.</p>
+          </article>
+          <article class="skill-card reveal" data-category="customer">
+            <div class="skill-icon">◆</div><h3>EBRs & QBRs</h3>
+            <p>Executive business reviews, stakeholder alignment, and value communication.</p>
+          </article>
+          <article class="skill-card reveal" data-category="customer">
+            <div class="skill-icon">◎</div><h3>Value Realization</h3>
+            <p>Driving adoption, customer outcomes, and Time-to-Value.</p>
+          </article>
+          <article class="skill-card reveal" data-category="customer">
+            <div class="skill-icon">↗</div><h3>Renewals & Expansion</h3>
+            <p>Renewal management, account expansion, and churn mitigation.</p>
+          </article>
+          <article class="skill-card reveal" data-category="customer">
+            <div class="skill-icon">♢</div><h3>Customer Success Plans</h3>
+            <p>Structured success planning around customer objectives and outcomes.</p>
+          </article>
+          <article class="skill-card reveal" data-category="customer">
+            <div class="skill-icon">⚑</div><h3>Technical Escalations</h3>
+            <p>Risk identification, escalation coordination, and cross-functional resolution.</p>
+          </article>
+          <article class="skill-card reveal" data-category="cloud">
+            <div class="skill-icon">☁</div><h3>AWS</h3><p>Cloud environment exposure across enterprise operations.</p>
+          </article>
+          <article class="skill-card reveal" data-category="cloud">
+            <div class="skill-icon">☁</div><h3>Microsoft Azure</h3><p>Cloud environment exposure and enterprise operations.</p>
+          </article>
+          <article class="skill-card reveal" data-category="cloud">
+            <div class="skill-icon">☁</div><h3>Google Cloud</h3><p>Cloud environment exposure across SaaS and enterprise contexts.</p>
+          </article>
+          <article class="skill-card reveal" data-category="cloud">
+            <div class="skill-icon">▣</div><h3>SaaS / PaaS / IaaS</h3><p>Lifecycle and operational experience across cloud service models.</p>
+          </article>
+          <article class="skill-card reveal" data-category="cloud">
+            <div class="skill-icon">◈</div><h3>Cloud Security Risk Management</h3><p>Exposure to cloud security risk and enterprise governance.</p>
+          </article>
+          <article class="skill-card reveal" data-category="systems">
+            <div class="skill-icon">▦</div><h3>Salesforce</h3><p>Enterprise customer and relationship management platform.</p>
+          </article>
+          <article class="skill-card reveal" data-category="systems">
+            <div class="skill-icon">◫</div><h3>Clari</h3><p>Customer-success and commercial operations tooling.</p>
+          </article>
+          <article class="skill-card reveal" data-category="systems">
+            <div class="skill-icon">◉</div><h3>ChurnZero</h3><p>Customer-success and retention workflow tooling.</p>
+          </article>
+          <article class="skill-card reveal" data-category="systems">
+            <div class="skill-icon">✓</div><h3>SLA Compliance</h3><p>Service-level governance and operational accountability.</p>
+          </article>
+          <article class="skill-card reveal" data-category="systems">
+            <div class="skill-icon">§</div><h3>Compliance Audits</h3><p>Enterprise compliance reporting and governance processes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">03 / Experience</div>
+            <h2>A career built around<br>customers & operations.</h2>
+          </div>
+          <p class="section-intro">Selected professional experience and measurable outcomes.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="job reveal">
+            <span class="dot"></span>
+            <div class="job-top">
+              <div><h3>LLUBRAEB Analytics</h3><div class="role">Senior Customer Success Manager (Client Delivery & Operations)</div></div>
+              <div class="date">03/2023 – Present</div>
+            </div>
+            <ul>
+              <li>Managed the full customer journey for enterprise accounts, driving adoption, value realization, and accelerating Time-to-Value (TTV).</li>
+              <li>Partnered with technical and executive stakeholders to execute Executive Business Reviews (EBRs), securing renewals and driving account expansions.</li>
+              <li>Identified account risks, managed cross-functional technical escalations, and enforced SLA compliance to protect Net Retention Rate (NRR).</li>
+            </ul>
+          </article>
+
+          <article class="job reveal">
+            <span class="dot"></span>
+            <div class="job-top">
+              <div><h3>CSRL</h3><div class="role">Project Manager (Centre Head)</div></div>
+              <div class="date">10/2020 – 02/2023</div>
+            </div>
+            <ul>
+              <li>Directed unit operations and stakeholder engagement strategies, securing a Top 3 National Ranking out of 29 centers.</li>
+              <li>Managed enterprise sponsor relationships and compliance reporting, achieving 100% contract renewals and funding continuity.</li>
+              <li>Implemented rapid-response protocols to maintain operational resilience and zero downtime during high-risk disruption periods.</li>
+            </ul>
+          </article>
+
+          <article class="job reveal">
+            <span class="dot"></span>
+            <div class="job-top">
+              <div><h3>Oracle</h3><div class="role">Business Analyst II – SaaS/PaaS Operations (PTC Specialist)</div></div>
+              <div class="date">01/2017 – 10/2018</div>
+            </div>
+            <ul>
+              <li>Managed end-to-end deal approval and onboarding workflows for NAMER Public Sector IaaS, PaaS, and SaaS cloud environments.</li>
+              <li>Optimized order cycle turnaround times by 50% with a 380% productivity rating while enforcing strict SLA and SOX compliance.</li>
+              <li>Validated multi-million-dollar deal structures via Deal Approval Systems, mitigating revenue recognition risks.</li>
+            </ul>
+          </article>
+
+          <article class="job reveal">
+            <span class="dot"></span>
+            <div class="job-top">
+              <div><h3>Dell Technologies</h3><div class="role">Client Tech Support Associate (Dell Tech Concierge)</div></div>
+              <div class="date">05/2015 – 01/2017</div>
+            </div>
+            <ul>
+              <li>Managed concierge support operations for global enterprise accounts, maximizing CSAT/NPS scores and driving customer advocacy.</li>
+              <li>Diagnosed complex enterprise architecture issues as a certified Dell Resolution Expert, accelerating technical resolution and value realization.</li>
+            </ul>
+          </article>
+
+          <article class="job reveal">
+            <span class="dot"></span>
+            <div class="job-top">
+              <div><h3>HSBC</h3><div class="role">Premier Account Opening Officer</div></div>
+              <div class="date">05/2014 – 04/2015</div>
+            </div>
+            <ul>
+              <li>Maintained a 0% error rate across high-volume KYC, AML, and compliance audits while accelerating onboarding workflows for global enterprise clients.</li>
+            </ul>
+          </article>
+
+          <article class="job reveal">
+            <span class="dot"></span>
+            <div class="job-top">
+              <div><h3>HSBC</h3><div class="role">Customer Service Executive</div></div>
+              <div class="date">09/2011 – 09/2013</div>
+            </div>
+            <ul>
+              <li>Delivered elite customer interaction standards and issue resolution metrics, earning “Academy Quality Idol” and top-decile performance recognition.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">04 / Education</div>
+            <h2>Foundation & credentials</h2>
+          </div>
+        </div>
+        <div class="pill-grid reveal">
+          <span class="pill">B.Com — Dr. C. V. Raman University · 2013–2016</span>
+          <span class="pill">Dell Resolution Expert</span>
+          <span class="pill">IELTS Speaking Band 8.5</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div>
+            <div class="kicker">05 / Contact</div>
+            <h2>Let's connect.</h2>
+            <p>
+              Open to conversations around customer success, enterprise relationships,
+              cloud and SaaS operations, and customer-focused technology.
+            </p>
+          </div>
+          <div class="contact-links">
+            <a class="btn primary" href="mailto:suunandana.r@gmail.com">Email Me</a>
+            <a class="btn secondary" href="#" onclick="alert('Replace this # with your LinkedIn profile URL.');return false;">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© <span id="year"></span> Suunandana R</span>
+      <span>Built as a single-file GitHub portfolio.</span>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById("nav");
+    const progress = document.getElementById("progress");
+    const menu = document.getElementById("menu");
+    const navLinks = document.getElementById("navLinks");
+    const glow = document.getElementById("cursorGlow");
+
+    window.addEventListener("scroll", () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = `${Math.min(100, (window.scrollY / max) * 100)}%`;
+    }, {passive:true});
+
+    menu.addEventListener("click", () => navLinks.classList.toggle("open"));
+    navLinks.querySelectorAll("a").forEach(a =>
+      a.addEventListener("click", () => navLinks.classList.remove("open"))
+    );
+
+    // Subtle desktop cursor ambience.
+    if (window.matchMedia("(pointer:fine)").matches) {
+      window.addEventListener("pointermove", e => {
+        glow.style.opacity = ".8";
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+      }, {passive:true});
+    }
+
+    // Scroll reveal.
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, {threshold:.1});
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    // Interactive skill filtering.
+    document.querySelectorAll(".filter").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
+        button.classList.add("active");
+        const filter = button.dataset.filter;
+
+        document.querySelectorAll(".skill-card").forEach(card => {
+          const show = filter === "all" || card.dataset.category === filter;
+          card.style.display = show ? "block" : "none";
+          if (show) {
+            card.animate(
+              [{opacity:0, transform:"translateY(8px)"},{opacity:1, transform:"translateY(0)"}],
+              {duration:280, easing:"ease-out"}
+            );
+          }
+        });
+      });
+    });
+
+    // Gentle magnetic hover for primary CTAs.
+    document.querySelectorAll(".btn.primary").forEach(btn => {
+      btn.addEventListener("pointermove", e => {
+        if (window.matchMedia("(pointer:fine)").matches) {
+          const r = btn.getBoundingClientRect();
+          const x = (e.clientX - r.left - r.width/2) * .10;
+          const y = (e.clientY - r.top - r.height/2) * .10;
+          btn.style.transform = `translate(${x}px,${y}px)`;
+        }
+      });
+      btn.addEventListener("pointerleave", () => btn.style.transform = "");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
